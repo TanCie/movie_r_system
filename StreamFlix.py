@@ -1,12 +1,14 @@
+from PIL import Image
 import streamlit as st
 import pickle
 import pandas as pd
 import requests
 from streamlit_lottie import st_lottie
 
-st.set_page_config(page_title="Recommender System", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="StreamFlix", page_icon=":tada:", layout="wide")
 st.snow()
 
+st.image("images/logo.png")
 
 # using lottie animations
 def load_lottieurl(url):
@@ -19,7 +21,6 @@ def load_lottieurl(url):
 lottie_coding = load_lottieurl(
     "https://assets7.lottiefiles.com/private_files/lf30_F6EtR7.json")
 
-st_lottie(lottie_coding, height=300, key=lottie_coding)
 
 
 # using css styles for the contact form
@@ -81,11 +82,11 @@ selected_movie = st.selectbox('Enter any movie name',
 if st.button('Recommend'):
     names, posters, desc, genre, rating, cast = recommend(selected_movie)
 
+    dupeCast = [[] for i in range(8)]
+
     st.write("---")
     st.header("Recommended Movies for you")
     st.write("##")
-
-    dupeCast = [[] for i in range(8)]
 
     for i in range(8):
 
