@@ -8,7 +8,7 @@ from streamlit_lottie import st_lottie
 st.set_page_config(page_title="StreamFlix", page_icon=":tada:", layout="wide")
 st.snow()
 
-st.image("images/logo2.png")
+st.image("images/logo1.png")
 
 # using lottie animations
 def load_lottieurl(url):

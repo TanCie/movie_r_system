@@ -1,7 +1,7 @@
 import PIL as Image
 import streamlit as st
 
-st.image("images/logo.png")
+st.image("images/logo1.png")
 st.snow()
 
 def local_css(file_name):
